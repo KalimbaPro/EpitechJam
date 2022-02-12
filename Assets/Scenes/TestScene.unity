@@ -147,7 +147,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 29364280}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.225, y: -1.062, z: 0}
+  m_LocalPosition: {x: 0.244, y: -1.094, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 563804687}
@@ -314,10 +314,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 250
   jumpForce: 300
+  isGrounded: 0
+  rb: {fileID: 563804685}
+  spriteRenderer: {fileID: 563804686}
   leftFoot: {fileID: 1302861105}
   rightFoot: {fileID: 29364281}
-  rb: {fileID: 563804685}
-  boxCol2D: {fileID: 563804684}
 --- !u!61 &563804684
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -424,7 +425,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 563804682}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.968, y: -0.013, z: 0}
+  m_LocalPosition: {x: -2.387, y: 0.658, z: 0}
   m_LocalScale: {x: 1, y: 0.979, z: 1}
   m_Children:
   - {fileID: 1302861105}
@@ -456,7 +457,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1302861104}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.252, y: -1.062, z: 0}
+  m_LocalPosition: {x: -0.23299995, y: -1.094, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 563804687}
@@ -474,6 +475,8 @@ GameObject:
   - component: {fileID: 1807922730}
   - component: {fileID: 1807922729}
   - component: {fileID: 1807922728}
+  - component: {fileID: 1807922732}
+  - component: {fileID: 1807922731}
   m_Layer: 0
   m_Name: Platform
   m_TagString: Untagged
@@ -507,7 +510,7 @@ TilemapCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
+  m_UsedByComposite: 1
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
@@ -550,7 +553,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -1137,3 +1140,78 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!66 &1807922731
+CompositeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1807922726}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_GeometryType: 1
+  m_GenerationType: 0
+  m_EdgeRadius: 0
+  m_ColliderPaths:
+  - m_Collider: {fileID: 1807922728}
+    m_ColliderPaths:
+    - - X: 60000000
+        Y: -50000000
+      - X: 60000000
+        Y: -20000000
+      - X: 58750000
+        Y: -20000000
+      - X: 60000000
+        Y: -18750000
+      - X: 60000000
+        Y: -10000000
+      - X: -60000000
+        Y: -10000000
+      - X: -60000000
+        Y: -19375000
+      - X: -59375000
+        Y: -20000000
+      - X: -60000000
+        Y: -20000000
+      - X: -60000000
+        Y: -50000000
+  m_CompositePaths:
+    m_Paths:
+    - - {x: 5.999971, y: -5}
+      - {x: 5.999971, y: -2}
+      - {x: 5.8750615, y: -1.9999384}
+      - {x: 6, y: -1.8749893}
+      - {x: 5.999971, y: -1}
+      - {x: -6, y: -1.0000293}
+      - {x: -5.9999924, y: -1.9375076}
+      - {x: -5.9375873, y: -2}
+      - {x: -6, y: -2.0000293}
+      - {x: -5.999971, y: -5}
+  m_VertexDistance: 0.0005
+  m_OffsetDistance: 0.00005
+--- !u!50 &1807922732
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1807922726}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

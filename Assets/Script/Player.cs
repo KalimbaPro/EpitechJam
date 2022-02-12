@@ -55,6 +55,7 @@ public class Player : MonoBehaviour
 
         if (isJumping)
         {
+            print("jump");
             rb.AddForce(new Vector2(0f, jumpForce));
             isJumping = false;
         }
