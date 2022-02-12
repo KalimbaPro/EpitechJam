@@ -19,11 +19,26 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 velocity = Vector3.zero;
     private float horizontalMovement;
 
+    public static PlayerMovement instance;
+    private void Awake()
+    {
+        if (instance != null)
+        {
+            Debug.LogWarning("Il y a plus d'une instance de PlayerMovement dans la scène");
+            return;
+        }
+        instance = this;
+    }
+
     void Update()
     {
         horizontalMovement = Input.GetAxis("Horizontal") * moveSpeed * Time.fixedDeltaTime;
+        if (PlayerHealth.instance.health <= 0)
+        {
+            horizontalMovement = 0;
+        }
 
-        if (Input.GetButtonDown("Jump") && isGrounded)
+        if (Input.GetButtonDown("Jump") && isGrounded && ! (PlayerHealth.instance.health <= 0))
         {
             isJumping = true;
             StatsTracker.instance.addJump(1);
@@ -33,6 +48,7 @@ public class PlayerMovement : MonoBehaviour
         float characterVelocity = Mathf.Abs(rb.velocity.x);
         animator.SetFloat("Speed", characterVelocity);
         animator.SetBool("isGrounded", isGrounded);
+        animator.SetFloat("VerticalSpeed", rb.velocity.y);
     }
 
     void FixedUpdate()
