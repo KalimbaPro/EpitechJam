@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
     public float moveSpeed;
     public float jumpForce;
@@ -10,25 +10,14 @@ public class Player : MonoBehaviour
 
     public Rigidbody2D rb;
     public SpriteRenderer spriteRenderer;
+    public Animator animator;
 
     public Transform leftFoot;
     public Transform rightFoot;
+    public LayerMask CollisionLayer;
 
     private Vector3 velocity = Vector3.zero;
     private float horizontalMovement;
-
-    public static Player instance;
-
-    private void Awake()
-    {
-        if (instance != null)
-        {
-            Debug.LogWarning("Il y a plus d'une instance de PlayerMovement dans la scène");
-            return;
-        }
-
-        instance = this;
-    }
 
     void Update()
     {
@@ -37,14 +26,18 @@ public class Player : MonoBehaviour
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
             isJumping = true;
+            StatsTracker.instance.addJump(1);
         }
 
         Flip(rb.velocity.x);
+        float characterVelocity = Mathf.Abs(rb.velocity.x);
+        animator.SetFloat("Speed", characterVelocity);
+        animator.SetBool("isGrounded", isGrounded);
     }
 
     void FixedUpdate()
     {
-        isGrounded = Physics2D.OverlapArea(leftFoot.position, rightFoot.position);
+        isGrounded = Physics2D.OverlapArea(leftFoot.position, rightFoot.position, CollisionLayer);
         MovePlayer(horizontalMovement);
     }
 
@@ -55,7 +48,6 @@ public class Player : MonoBehaviour
 
         if (isJumping)
         {
-            print("jump");
             rb.AddForce(new Vector2(0f, jumpForce));
             isJumping = false;
         }
