@@ -3500,37 +3500,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2348957353630227435, guid: 330ee52c8bfdda34d86fb547878a91c5, type: 3}
   m_PrefabInstance: {fileID: 613525830}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &646360301 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4366053439496296619, guid: 1f68ed1361a66cf45bbd2c90c6c3ce9d, type: 3}
-  m_PrefabInstance: {fileID: 1341899674}
-  m_PrefabAsset: {fileID: 0}
---- !u!61 &646360305
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 646360301}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.99759036, y: 1.0012048}
-    newSize: {x: 0.99759036, y: 1.0012048}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.99759036, y: 1.0012048}
-  m_EdgeRadius: 0
 --- !u!1 &789170180
 GameObject:
   m_ObjectHideFlags: 0
@@ -6324,63 +6293,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2348957353630227435, guid: 3d3f3d79286d19e4ba63cb755facad99, type: 3}
   m_PrefabInstance: {fileID: 1340477354}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1341899674
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4366053439496296619, guid: 1f68ed1361a66cf45bbd2c90c6c3ce9d, type: 3}
-      propertyPath: m_Name
-      value: Apple
-      objectReference: {fileID: 0}
-    - target: {fileID: 5206009246059580956, guid: 1f68ed1361a66cf45bbd2c90c6c3ce9d, type: 3}
-      propertyPath: m_RootOrder
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 5206009246059580956, guid: 1f68ed1361a66cf45bbd2c90c6c3ce9d, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -2.97
-      objectReference: {fileID: 0}
-    - target: {fileID: 5206009246059580956, guid: 1f68ed1361a66cf45bbd2c90c6c3ce9d, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 3.39
-      objectReference: {fileID: 0}
-    - target: {fileID: 5206009246059580956, guid: 1f68ed1361a66cf45bbd2c90c6c3ce9d, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5206009246059580956, guid: 1f68ed1361a66cf45bbd2c90c6c3ce9d, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5206009246059580956, guid: 1f68ed1361a66cf45bbd2c90c6c3ce9d, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5206009246059580956, guid: 1f68ed1361a66cf45bbd2c90c6c3ce9d, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5206009246059580956, guid: 1f68ed1361a66cf45bbd2c90c6c3ce9d, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5206009246059580956, guid: 1f68ed1361a66cf45bbd2c90c6c3ce9d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5206009246059580956, guid: 1f68ed1361a66cf45bbd2c90c6c3ce9d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5206009246059580956, guid: 1f68ed1361a66cf45bbd2c90c6c3ce9d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 1f68ed1361a66cf45bbd2c90c6c3ce9d, type: 3}
 --- !u!1 &1352327889
 GameObject:
   m_ObjectHideFlags: 0
@@ -8810,7 +8722,7 @@ CompositeCollider2D:
   m_GameObject: {fileID: 1807922726}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 3c669a7cffc6b554fa0dcafc3ea56652, type: 2}
+  m_Material: {fileID: 6200000, guid: dccd4a8b297719e47ab84742b15c3a31, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0

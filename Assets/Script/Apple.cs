@@ -7,9 +7,17 @@ public class Apple : MonoBehaviour
     public int heal;
     public bool golden;
     public AudioSource pickSound;
+    public SpriteRenderer sr;
+    public Sprite goldenSprite;
     void Start()
     {
         Physics2D.IgnoreLayerCollision(7, 8);
+        golden = Random.Range(0, 100) == 0;
+
+        if (golden)
+        {
+            sr.sprite = goldenSprite;
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
