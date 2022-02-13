@@ -33,6 +33,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         horizontalMovement = Input.GetAxis("Horizontal") * moveSpeed * Time.fixedDeltaTime;
+        StatsTracker.instance.addMeter(Mathf.Abs(horizontalMovement) / 100);
         if (PlayerHealth.instance.health <= 0)
         {
             horizontalMovement = 0;
@@ -46,6 +47,13 @@ public class PlayerMovement : MonoBehaviour
 
         Flip(rb.velocity.x);
         float characterVelocity = Mathf.Abs(rb.velocity.x);
+        if (characterVelocity < 0.3f)
+        {
+            StatsTracker.instance.rest += Time.deltaTime;
+        } else
+        {
+            StatsTracker.instance.rest = 0;
+        }
         animator.SetFloat("Speed", characterVelocity);
         animator.SetBool("isGrounded", isGrounded);
         animator.SetFloat("VerticalSpeed", rb.velocity.y);
@@ -55,6 +63,10 @@ public class PlayerMovement : MonoBehaviour
     {
         isGrounded = Physics2D.OverlapArea(leftFoot.position, rightFoot.position, CollisionLayer);
         MovePlayer(horizontalMovement);
+        if (isGrounded)
+        {
+            StatsTracker.instance.killStreak = 0;
+        }
     }
 
     void MovePlayer(float _horizontalMovement)

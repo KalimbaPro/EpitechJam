@@ -35,6 +35,7 @@ public class PlayerHealth : MonoBehaviour
         {
             return;
         }
+        StatsTracker.instance.dodge = 0;
         health -= amount;
         if (health < 0)
         {
@@ -64,6 +65,7 @@ public class PlayerHealth : MonoBehaviour
     public void Die()
     {
         // launch respawn
+        StatsTracker.instance.addDeath(1);
         StartCoroutine(RespawnDelay());
     }
 

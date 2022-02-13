@@ -243,6 +243,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2348957353630227435}
   - component: {fileID: 414359717411840700}
+  - component: {fileID: 5929553097930682809}
   m_Layer: 0
   m_Name: EasySucces
   m_TagString: Untagged
@@ -280,3 +281,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8497530908116792911}
   m_CullTransparentMesh: 1
+--- !u!114 &5929553097930682809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8497530908116792911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a67eb2fcf46cc344eb399fb5e96f4031, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unlocked: 0
+  background: {fileID: 4497084600889947333}
+  title: {fileID: 135770988801362696}
+  desc: {fileID: 1816391124225181037}

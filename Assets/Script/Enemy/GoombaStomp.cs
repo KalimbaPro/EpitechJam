@@ -46,7 +46,7 @@ public class GoombaStomp : MonoBehaviour
         } else
         {
             Die();
-
+            StatsTracker.instance.killStreak += 1;
             switch (eType)
             {
                 case EnemyType.Ground:
