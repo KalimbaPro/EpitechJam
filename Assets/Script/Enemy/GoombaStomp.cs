@@ -17,6 +17,7 @@ public class GoombaStomp : MonoBehaviour
     public Animator animator;
     public Waypoints waypointScript;
     public AudioSource audioSource;
+    public AudioSource audioHurt;
 
     public int health;
     private bool invicible;
@@ -40,6 +41,7 @@ public class GoombaStomp : MonoBehaviour
             invicible = true;
             animator.SetBool("isDmg", true);
             waypointScript.enabled = false;
+            audioHurt.Play();
             StartCoroutine(InvicibilityDelay());
         } else
         {
