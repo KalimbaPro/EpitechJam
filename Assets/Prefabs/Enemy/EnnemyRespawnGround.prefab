@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obj: {fileID: 0}
   objPrefab: {fileID: 2578538870541014695}
-  delay: 1
+  delay: 20
   generating: 0
 --- !u!1001 &8278025502236473469
 PrefabInstance:
