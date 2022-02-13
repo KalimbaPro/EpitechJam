@@ -6,12 +6,12 @@ public class PauseMenu : MonoBehaviour
     public static bool isPaused = false;
 
     public GameObject pauseMenuUi;
+    public AudioSource buttonSound;
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Debug.Log("oui");
             if (isPaused)
             {
                 Resume();
@@ -21,12 +21,11 @@ public class PauseMenu : MonoBehaviour
                 Paused();
             }
         }
-
-        isPaused = !isPaused;
     }
 
-    void Paused()
+    public void Paused()
     {
+        Cursor.visible = true;
         pauseMenuUi.SetActive(true);
         Time.timeScale = 0;
         isPaused = true;
@@ -34,6 +33,8 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
+        AudioManager.instance.PlayClipAt(buttonSound.clip, transform.position, buttonSound.outputAudioMixerGroup);
+        Cursor.visible = false;
         pauseMenuUi.SetActive(false);
         Time.timeScale = 1;
         isPaused = false;
@@ -42,6 +43,7 @@ public class PauseMenu : MonoBehaviour
     public void LoadMainMenu()
     {
         Resume();
+        Cursor.visible = true;
         SceneManager.LoadScene("MainMenu");
     }
 }

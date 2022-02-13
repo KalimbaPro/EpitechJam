@@ -24,10 +24,6 @@ public class PlayerHealth : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.H))
-        {
-            takeDmg(1);
-        }
         animator.SetBool("isDead", health <= 0);
         hpBar.health = health;
     }

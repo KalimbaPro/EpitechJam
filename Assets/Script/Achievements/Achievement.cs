@@ -8,7 +8,7 @@ public class Achievement : MonoBehaviour
     public GameObject mediumAchievement;
     public GameObject advancedAchievement;
     public GameObject legendaryAchievement;
-    
+
     public string levelToLoad;
     
     private void setFalse()
@@ -20,38 +20,33 @@ public class Achievement : MonoBehaviour
         legendaryAchievement.SetActive(false);
     }
 
-    public void BasicButton()
+    private void open(GameObject toOpen)
     {
         setFalse();
-        basicAchievement.SetActive(true);
+        toOpen.SetActive(true);
+    }
+    public void BasicButton()
+    {
+        open(basicAchievement);
     }
 
     public void EasyButton()
     {
-        setFalse();
-        easyAchievement.SetActive(true);
+        open(easyAchievement);
     }
 
     public void MediumButton()
     {
-        setFalse();
-        mediumAchievement.SetActive(true);
+        open(mediumAchievement);
     }
 
     public void AdvancedButton()
     {
-        setFalse();
-        advancedAchievement.SetActive(true);
+        open(advancedAchievement);
     }
 
     public void LegendaryButton()
     {
-        setFalse();
-        legendaryAchievement.SetActive(true);
-    }
-
-    public void CloseButton()
-    {
-        SceneManager.LoadScene(levelToLoad);
+        open(legendaryAchievement);
     }
 }
