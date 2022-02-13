@@ -11,6 +11,8 @@ public class PlayerHealth : MonoBehaviour
 
     public Transform Checkpoint;
 
+    public AudioSource hitSound;
+
     public static PlayerHealth instance;
     private void Awake()
     {
@@ -24,10 +26,6 @@ public class PlayerHealth : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.H))
-        {
-            takeDmg(1);
-        }
         animator.SetBool("isDead", health <= 0);
         hpBar.health = health;
     }
@@ -47,9 +45,12 @@ public class PlayerHealth : MonoBehaviour
             animator.SetBool("isDmg", true);
             invicible = true;
             StartCoroutine(InvicibilityDelay());
+            AudioManager.instance.PlayClipAt(hitSound.clip, transform.position, hitSound.outputAudioMixerGroup);
             // frame invincibility
-        } else
+        }
+        else
         {
+            AudioManager.instance.PlayClipAt(hitSound.clip, transform.position, hitSound.outputAudioMixerGroup);
             Die();
         }
     }
