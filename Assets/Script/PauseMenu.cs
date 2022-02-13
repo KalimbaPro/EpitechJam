@@ -22,7 +22,7 @@ public class PauseMenu : MonoBehaviour
             }
         }
 
-            isPaused = !isPaused;
+        isPaused = !isPaused;
     }
 
     void Paused()
