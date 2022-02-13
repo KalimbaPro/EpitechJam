@@ -21382,6 +21382,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2348957353630227435, guid: 12c402985feac1f48a0824ea85a7cfac, type: 3}
   m_PrefabInstance: {fileID: 1165188434}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1165188436 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6079697271404946940, guid: 12c402985feac1f48a0824ea85a7cfac, type: 3}
+  m_PrefabInstance: {fileID: 1165188434}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a67eb2fcf46cc344eb399fb5e96f4031, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1169049457
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23375,6 +23386,7 @@ MonoBehaviour:
   mediumFly: {fileID: 1221686855}
   mediumDodge: {fileID: 2031980022}
   mediumCheckpoint: {fileID: 535656468}
+  legendaryMonsterKill: {fileID: 1165188436}
   coins: 0
   jump: 0
   gKill: 0

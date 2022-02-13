@@ -31,6 +31,10 @@ public class StatsTracker : MonoBehaviour
     public AchievementUnlock mediumDodge;
     public AchievementUnlock mediumCheckpoint;
 
+    // legendaryAchievments
+    public AchievementUnlock legendaryMonsterKill;
+    public AchievementUnlock legendaryASICS;
+
     // stats
     [HideInInspector] public int coins = 0;
     [HideInInspector] public int jump = 0;
@@ -63,6 +67,7 @@ public class StatsTracker : MonoBehaviour
         basicAchievementCheck();
         easyAchievementCheck();
         mediumAchievementCheck();
+        legendaryAchievementCheck();
         GameObject[] holes = GameObject.FindGameObjectsWithTag("Hole");
         allHoleExplored = true;
         foreach (GameObject hole in holes)
@@ -229,6 +234,18 @@ public class StatsTracker : MonoBehaviour
             advancedCheckpoint.Unlock();
         }
     }*/
+
+    private void legendaryAchievementCheck()
+    {
+        if (killStreak >= 6 && !legendaryMonsterKill.unlocked)
+        {
+            legendaryMonsterKill.Unlock();
+        }
+        if (metter >= 10000 && !legendaryASICS.unlocked)
+        {
+            legendaryASICS.Unlock();
+        }
+    }
 
 
 
