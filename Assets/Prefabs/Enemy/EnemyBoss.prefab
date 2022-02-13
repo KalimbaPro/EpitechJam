@@ -162,6 +162,14 @@ PrefabInstance:
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6433646507393964097, guid: 310814ff8c210eb44bd2183ed9f4c12a, type: 3}
+      propertyPath: Priority
+      value: 222
+      objectReference: {fileID: 0}
+    - target: {fileID: 6433646507393964097, guid: 310814ff8c210eb44bd2183ed9f4c12a, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 1b95aff4397c7ec4a82d1bfe8d76f78b, type: 3}
     - target: {fileID: 7294639741608513663, guid: 310814ff8c210eb44bd2183ed9f4c12a, type: 3}
       propertyPath: speed
       value: 2
