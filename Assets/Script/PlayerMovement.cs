@@ -80,4 +80,9 @@ public class PlayerMovement : MonoBehaviour
             spriteRenderer.flipX = true;
         }
     }
+
+    public void SetHorizontalMovement(float val)
+    {
+        horizontalMovement = val;
+    }
 }
