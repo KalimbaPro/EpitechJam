@@ -1037,7 +1037,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &694295774
 GameObject:
@@ -2066,7 +2066,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1034.0526, y: 556.9397, z: -126.741135}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 2061523202}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2667,7 +2668,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe587f37b26672640be05ce6f3f5d500, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelToLoad: TestScene
+  levelToLoad: MainLevel
   settingsWindow: {fileID: 1048449340}
   startSound: {fileID: 1650158469}
   normalSound: {fileID: 895736065}
@@ -4033,13 +4034,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2061523201}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 670.40497, y: 1032.3477, z: -68.894936}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -363.64764, y: 475.40796, z: 57.8462}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1650158468}
   - {fileID: 895736064}
   - {fileID: 556297116}
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_Father: {fileID: 991508928}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
