@@ -60,7 +60,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void Die()
     {
-        // PlayerMovement.instance.enabled = false;
+        // launch respawn
     }
 
     public IEnumerator InvicibilityDelay()
