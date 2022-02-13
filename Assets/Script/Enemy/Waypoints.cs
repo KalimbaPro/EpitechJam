@@ -14,7 +14,7 @@ public class Waypoints : MonoBehaviour
     {
         target = waypointList[0];
         targetIndex = 0;
-        graphics.flipX = ((target.position - transform.position).normalized.x < 0.3);
+        graphics.flipX = target.position.x < transform.position.x;
     }
 
     void Update()
