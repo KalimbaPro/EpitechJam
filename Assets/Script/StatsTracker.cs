@@ -12,6 +12,9 @@ public class StatsTracker : MonoBehaviour
     public int gKill = 0;
     public int fKill = 0;
     public int totalKill = 0;
+    public int water = 0;
+    public int lava = 0;
+    public int apple = 0;
     public bool allHoleExplored = false;
 
     private void Awake()
@@ -56,5 +59,17 @@ public class StatsTracker : MonoBehaviour
     {
         fKill += count;
         totalKill += count;
+    }
+    public void addWater(int count)
+    {
+        water += count;
+    }
+    public void addLava(int count)
+    {
+        lava += count;
+    }
+    public void addApple(int count)
+    {
+        apple += count;
     }
 }

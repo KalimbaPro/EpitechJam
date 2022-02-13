@@ -9,6 +9,8 @@ public class PlayerHealth : MonoBehaviour
     public bool invicible = false;
     public HealthBar hpBar;
 
+    public Transform Checkpoint;
+
     public static PlayerHealth instance;
     private void Awake()
     {
@@ -55,12 +57,13 @@ public class PlayerHealth : MonoBehaviour
     {
         health += amount;
         if (health > 3)
-            health = 33;
+            health = 3;
     }
 
     public void Die()
     {
         // launch respawn
+        StartCoroutine(RespawnDelay());
     }
 
     public IEnumerator InvicibilityDelay()
@@ -68,5 +71,17 @@ public class PlayerHealth : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         invicible = false;
         animator.SetBool("isDmg", false);
+    }
+
+    public void respawn()
+    {
+        transform.position = Checkpoint.position;
+        health = 3;
+    }
+
+    public IEnumerator RespawnDelay()
+    {
+        yield return new WaitForSeconds(0.8f);
+        respawn();
     }
 }
